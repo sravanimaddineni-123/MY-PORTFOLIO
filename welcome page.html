@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Sravani</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: white;
+            background: linear-gradient(
+                270deg,
+                #ff0080,
+                #7928ca,
+                #00c6ff,
+                #00ff99,
+                #ffcc00
+            );
+            background-size: 600% 600%;
+            animation: bgMove 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Floating bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.35;
+            animation: float 15s infinite linear;
+        }
+
+        .bubble:nth-child(1) { width: 80px; height: 80px; background: #ff4ecd; left: 10%; animation-duration: 18s; }
+        .bubble:nth-child(2) { width: 120px; height: 120px; background: #00eaff; left: 30%; animation-duration: 22s; }
+        .bubble:nth-child(3) { width: 60px; height: 60px; background: #00ff99; left: 55%; animation-duration: 16s; }
+        .bubble:nth-child(4) { width: 100px; height: 100px; background: #ffe600; left: 75%; animation-duration: 20s; }
+
+        @keyframes float {
+            from { bottom: -150px; transform: translateX(0); }
+            to { bottom: 110%; transform: translateX(-60px); }
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .welcome-box {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 60px 90px;
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            animation: zoomIn 1.5s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff4ecd, #00eaff, #ffe600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s infinite alternate;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: #00ffcc;
+            text-shadow: 0 0 15px #00ffcc;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff4ecd, #7928ca, #00c6ff);
+            color: white;
+            animation: btnGlow 2s infinite alternate;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #ff4ecd; }
+            to { text-shadow: 0 0 25px #00eaff; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes btnGlow {
+            from { box-shadow: 0 0 10px #ff4ecd; }
+            to { box-shadow: 0 0 25px #00c6ff; }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-box {
+                padding: 40px 30px;
+            }
+            h1 { font-size: 40px; }
+            .name { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <div class="welcome-box">
+        <h1>Welcome To OnlineGiftStore</h1>
+        <div class="name">Sravani Maddineni</div>
+        <p>Beautiful gifts for every moment, delivered with love 💖✨</p>
+        <button><a href="main.html">Enter</button>
+    </div>
+
+</body>
+</html>

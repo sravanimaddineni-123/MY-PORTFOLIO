@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God Idols</title>
+        <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+         *{
+            box-sizing: border-box;
+        }
+        #header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    padding:20px 80px ;
+    background-color: hsl(45, 6%, 86%);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+#navbar li{
+    list-style:none ;
+    padding: 0 20px;
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 24px;   /* 🔥 BIGGER TEXT */
+    font-weight: 700;
+    color: black;
+    transition: 0.3s ease;
+    position: relative;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color:rgb(11, 11, 11);
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content:"";
+    width:30%;
+    height: 2px;
+    background:#050101 ;
+    position: absolute;
+    bottom:-2px ;
+    left: 2px;
+    right:20px;
+}
+
+
+#feature .fe-box{
+    width: 340px;
+    height: 10cm;
+    padding:10px 25px 10px 10px ;
+    box-shadow:20px 20px 24px rgba(148, 142, 142, 0.03) ;
+    border: 1px solid #c3b8b8;
+    margin-left:25px;
+    margin-bottom:10px ;
+}
+#feature .fe-box:hover{
+    box-shadow:10px 10px 54px rgba(124, 124, 130, 0.945) ;
+}
+
+
+#feature{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 35px;
+    
+    }
+    .searchbar,input[type=text]{
+    font-size: 17px;
+  width: 300px;
+  height: 30px;
+}
+
+fieldset{
+    width: 9cm;
+    height: 11;
+}
+.container{
+    max-width: 1170px;
+    background-color:hsl(0, 5%, 69%) ;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer{
+    background-color: hsl(0, 5%, 69%);
+    padding: 70px 0;
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(11, 11, 11);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform:capitalize ;
+    color: rgb(13, 13, 13);
+    text-decoration: none;
+    font-weight: 300;
+    color: #0f0e0e;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: aliceblue;
+    padding-left: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    
+       <section id="header">
+        <a href="main.html"><img src="logo.jpg" alt="" style="width: 60" height="50"></a>
+          <form class="searchbar">
+            <div class="search">
+            <input type="text" placeholder="Search Gifts.." name="search">
+            </div>
+        </div>
+                
+          </form>
+        <div>
+            <ul id="navbar">
+                <!-- <li><a href="index.html" class="active"><i class="fa fa-house"></i><br></a></li> -->
+                <li><a href="projectlogin.html">Login</a></li>
+                <li><a href="projectsignup.html">SignUp</a></li>
+                <li><a href="contactus.html"><i class="fa-solid fa-phone"></i></a></li>
+                <li><a href="Visitlist.html"><i class="fa fa-heart"></i></a></li>
+                <li><a href="Add To cart.html"><i class="fa fa-cart-shopping"></i></a></li>
+                <li><a href="ProfileOfUser.html"><i class="fa fa-user"></i></a></li>
+            </ul>
+        </div>
+    </section><br>
+    <h1 style="text-align: center; color: rgb(231, 21, 122);">GOD IDOLS</h1>
+    
+<section id="feature" class="section-p1">
+    
+            <div class="fe-box">
+             <a href="lordvenky.html" target="_blank">
+                <img style="width:8cm;height:6cm;" src="lordvenky.jpg" ></a><br>
+                <h3>The Holy Tirupati Idol</h3>
+                <p style="color: black;font-size: larger;">Rs. 700<span> <button style="width: 2cm;">17% OFF</button></span></p>
+                <span> Rating: 4 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="ganesh.html" target="_blank">
+                <img style="width:8cm;height:6cm;" src="ganesh.jpg"  ></a>
+                <h3>Divine Lord Ganesha Idol
+                </h3>
+                <p style="color: black;font-size: larger;">Rs.500<span>  <button style="width: 2cm;">12% OFF</button></span></p>
+                <span> Rating: 5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="laxmi.html" target="blank">
+                <img style="width:8cm;height:6cm;" src="laxmi.webp"  ></a>
+                <h3>Sacred Goddess Laxmi Idol</h3>
+        <p style="color: black;font-size: larger;">Rs.900 <span>  <button style="width: 2cm;">15% OFF</button></span></p>
+        <span> Rating: 5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="plantvinayak.html">
+                <img style="width:8cm;height:6cm;" src="plantvinayak.webp"  ></a>
+                <h3>Plant Vinayak</h3>
+                <p style="color: black;font-size: larger;">Rs.645 <span>  <button style="width: 2cm;">17% OFF</button></span></p>
+                <span> Rating: 4.5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="krishna.html">
+                <img style="width:8cm;height:6cm;" src="krishna1.webp" ></a>
+                <h3>Lord Krishna Murti
+                </h3>
+                <p style="color: black;font-size: larger;">Rs.2415 <span>  <button style="width: 2cm;">15% OFF</button></span></p>
+                <span> Rating: 4.5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div> 
+            <div class="fe-box">
+                <a href="hanuman.html" target="_blank">
+                <img style="width:8cm;height:6cm;" src="hanuman.webp"></a>
+                <h3>Lord Hanuman Statue</h3>
+                <p style="color: black;font-size: larger;">Rs.2600<span>  <button style="width: 2cm;">20% OFF</button></span></p>
+                <span> Rating: 4.5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="buddha.html" target="_blank">
+                <img style="width:8cm;height:6cm;" src="buddha3.webp"></a>
+                <h3>Lord Buddha Ivory Finish Idol
+                </h3>
+                <p style="color: black;font-size: larger;">Rs.945 <span>  <button style="width: 2cm;">5% OFF</button></span></p>
+                <span> Rating: 4.5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            <div class="fe-box">
+                <a href="lordsiva.html" target="_blank">
+                <img style="width:8cm;height:6cm;" src="lordsiva.webp"></a>
+                <h3>Shiv Parivar Brass Idol
+                </h3>
+                <p style="color: black;font-size: larger;">Rs.2200<span>  <button style="width: 2cm;">30% OFF</button></span></p>
+                <span> Rating: 4.5 <img src="star.jpg" style="width:16px; height: 16px;"></span>
+            </div>
+            
+         
+            
+    
+            
+            
+              </section>
+            <footer style="background-color: #c3b8b8;">
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <ul>
+                        <h2>Policy Info</h2>
+                        <p><a href="#"><li>Terms & Conditions</li></a></p>
+                        <p><a href="#"><li>Privacy Policy</li></a></p>
+                        <p><a href="#"><li>Terms of Use</li></a></p>
+                  
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <h2>Follow Us</h2>
+                        <p><a href=""><li>Facebook</li><i class="fa-brands fa-facebook"></i></a></p>
+                        <p><a href=""><li>YouTube</li><i class="fa-brands fa-youtube"></i></a></p>
+                        <p><a href=""><li>Instagram</li><i class="fa-brands fa-instagram"></i></a></p>
+                        <p><a href=""><li>Mail id</li><i class="fa fa-envelope"></i></a></p>
+                        
+                    </ul>               
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <h2>Help </h2>
+                        <p><a href=""><li>Payments</li></a></p>
+                        <p><a href=""><li>Shipping</li></a></p>
+                        <p><a href=""><li>Cancellation & Returns</li></a></p>
+                        <p><a href=""><li>FAQ</li></a></p>
+                       
+                    </ul>                
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <h2>Address</h2>
+                       <li>Gift Shop Internet Private Limited,</li>
+                        <li>Building In Kalakada,</li>
+                        
+                        <li>KALAKADA 517236</li>
+                        <li>India</li>
+                        <li>Telephone: +91 9392993026</li>
+                    </ul>                
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+  
+
+</body>
+</html>

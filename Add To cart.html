@@ -1,0 +1,150 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border-bottom: 1px solid #ccc; padding: 12px 10px; text-align: left; }
+    th { background-color: #f2f2f2; font-size: 16px; }
+    td img { width: 60px; height: 60px; object-fit: cover; }
+    .quantity-controls { display: flex; align-items: center; }
+    .quantity-controls button { width: 25px; height: 25px; border: 1px solid #ccc; background-color: white; cursor: pointer; }
+    .quantity-controls span { padding: 0 10px; }
+    .remove-btn { background-color: transparent; border: none; color: red; font-size: 16px; cursor: pointer; }
+    .cart-summary { margin-top: 30px; font-size: 18px; font-weight: bold; text-align: right; }
+  </style>
+<style type="text/css"><br>* {<br>  -webkit-user-select: text !important;<br>  -moz-user-select: text !important;<br>  -ms-user-select: text !important;<br>   user-select: text !important;<br>}<br></style></head>
+<body>
+
+  <h1>Your Cart (<span id="item-count">1</span> items)</h1>
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="cart-body"><tr>
+          <td>
+            <img src="singleteddy.webp" alt="singleteddy">
+            <div>singleteddy</div>
+          </td>
+          <td>₹925</td>
+          <td>
+            <div class="quantity-controls">
+              <button onclick="updateQuantity(123, -1)">-</button>
+              <span>1</span>
+              <button onclick="updateQuantity(123, 1)">+</button>
+            </div>
+          </td>
+          <td>₹925</td>
+          <td><button class="remove-btn" onclick="removeFromCart(123)">×</button></td>
+        </tr></tbody>
+  </table>
+
+  <div class="cart-summary">
+    Subtotal: ₹<span id="total-price">925</span>
+  </div>
+
+  <script>
+    function updateQuantity(id, delta) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity < 1) item.quantity = 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        location.reload();
+      }
+    }
+
+    function removeFromCart(id) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartBody = document.getElementById("cart-body");
+    const totalPriceSpan = document.getElementById("total-price");
+    const itemCount = document.getElementById("item-count");
+
+    let total = 0;
+    itemCount.textContent = cart.length;
+
+    if (cart.length === 0) {
+      cartBody.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
+    } else {
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>
+            <img src="${item.image}" alt="${item.name}">
+            <div>${item.name}</div>
+          </td>
+          <td>₹${item.price}</td>
+          <td>
+            <div class="quantity-controls">
+              <button onclick="updateQuantity(${item.id}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${item.id}, 1)">+</button>
+            </div>
+          </td>
+          <td>₹${subtotal}</td>
+          <td><button class="remove-btn" onclick="removeFromCart(${item.id})">×</button></td>
+        `;
+        cartBody.appendChild(row);
+      });
+
+      totalPriceSpan.textContent = total;
+    }
+  </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<script type="text/javascript" src="chrome-extension://lepcimpolkbhimlaabjbinhlohocmjal/content_script_web_accessible/ecp_regular.js"></script></body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Education | Sravani Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="portfoliostyle.css">
+
+  <style>
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #34495e;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .edu-box {
+      padding: 20px 30px;
+      position: relative;
+      width: 50%;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .edu-box.left { left: 0; }
+    .edu-box.right { left: 50%; }
+
+    .edu-content {
+      background: #ffffffcc;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: larger;
+    }
+
+    .edu-box::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background: #ff9a9e;
+      border-radius: 50%;
+      top: 30px;
+      z-index: 1;
+    }
+
+    .right::after { left: -10px; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline::after { left: 31px; }
+      .edu-box {
+        width: 100%;
+        left: 0;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .edu-box::after { left: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="main-panel" style="height:auto;">
+  <div class="container">
+    <div class="width-33 logo">Port <span class="span-col">folio</span></div>
+    <div class="width-66">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="Education.html"><span class="span-col">Education</span></a>
+        <a href="skills.html">Skills</a>
+        <a href="Experience.html">Experience</a>
+                <a href="My Gallery.html">My Gallery</a>
+
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="container" style="padding:60px 0;">
+  <h1 style="text-align:center; font-size:60px; margin-bottom:50px;">
+    Academic <span class="span-col">Journey</span>
+  </h1>
+
+  <div class="timeline">
+
+    <div class="edu-box left">
+      <div class="edu-content">
+        <h2>🎓 B.Tech – Information Technology</h2>
+        <p><b>Sree Vidyanikethan Engineering College</b></p>
+        <p>2022 – 2025</p>
+        <p>CGPA: 8.75/ 10</p>
+      </div>
+    </div>
+
+    <div class="edu-box right">
+      <div class="edu-content">
+        <h2>🏫 Diploma</h2>
+        <p><b>Sree Vidyanikethan Engineering College</b></p>
+        <p>2019 – 2022</p>
+        <p>Percentage: 82%</p>
+      </div>
+    </div>
+
+    <div class="edu-box left">
+      <div class="edu-content">
+        <h2>📘 SSC</h2>
+        <p><b>AndhraPradesh Residential(Piler)</b></p>
+        <p>2019</p>
+        <p>GPA: 8.8 / 10</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

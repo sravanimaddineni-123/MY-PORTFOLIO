@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f2eee1;
+    font-family:Arial, sans-serif;
+}
+
+/* MAIN CONTAINER */
+.contact-parent{
+    display:flex;
+    max-width:1100px;
+    margin:80px auto;
+    background:#fff;
+}
+
+/* COMMON */
+.contact-child{
+    flex:1;
+    display:flex;
+}
+
+/* LEFT SIDE – PURE BLACK */
+
+
+/* LOGO IMAGE */
+.logo{
+    width: 500px;;                     /* CHANGE SIZE HERE */
+    height:auto;
+    display:block;
+}
+
+/* RIGHT SIDE */
+.child2{
+    background:#fff;
+    padding:40px;
+    align-items:center;
+}
+
+.inside-contact{
+    width:100%;
+}
+
+.inside-contact h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.inside-contact label{
+    font-weight:600;
+    margin-top:10px;
+}
+
+.inside-contact input,
+.inside-contact textarea{
+    width:100%;
+    padding:8px 10px;
+    margin-bottom:15px;
+    border:1px solid #999;
+    border-radius:4px;
+}
+
+.inside-contact input[type="submit"]{
+    background:#000;
+    color:#fff;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.inside-contact input[type="submit"]:hover{
+    background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .contact-parent{
+        flex-direction:column;
+    }
+
+    .child1{
+        height:200px;
+    }
+
+    .logo{
+        width:120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contact-parent">
+
+    <!-- LEFT BLACK PANEL -->
+    <div class="contact-child child1">
+        <img src="logo.jpg" class="logo" alt="GiftShop Logo">
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-child child2">
+        <div class="inside-contact">
+            <h2>Contact Us</h2>
+
+            <label>Name *</label>
+            <input type="text" required>
+
+            <label>Email *</label>
+            <input type="email" required>
+
+            <label>Phone *</label>
+            <input type="text" required>
+
+            <label>Subject *</label>
+            <input type="text" required>
+
+            <label>Message *</label>
+            <textarea rows="4" required></textarea>
+
+            <input type="submit" value="SEND">
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
